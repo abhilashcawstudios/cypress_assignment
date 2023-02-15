@@ -1,3 +1,9 @@
+/*Validate firstname, last name and email fields returned by fetch user is same as provided while adding a user
+Validate that no field has value as undefined or empty value.
+Validate user is not able to fetch user details with invalid token
+Validate the contact is added successfully using add contact api. Also, validate the response values for each field is correct.
+Validate the contact is deleted successfully using delete contact api. Also, validate get contact api returns error while fetching the deleted contact*/
+
 ///<reference types="Cypress"/>
 
 describe("Second Assignment", () => {

@@ -2,7 +2,7 @@
 
 describe("First Assignment", () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('url1'));
+    cy.visit(Cypress.env("url1"));
   });
 
   it.only("Task 1", () => {
@@ -47,7 +47,7 @@ describe("First Assignment", () => {
 
   it("Task 5", () => {
     let total = 0;
-    cy.visit("http://automationpractice.com/index.php");
+    cy.visit(Cypress.env("url1"));
     [1, 2, 3, 4, 5].forEach((num) => {
       cy.get(`[data-id-product="${num}"]`)
         .first()
@@ -57,7 +57,6 @@ describe("First Assignment", () => {
         .click();
     });
     cy.get('[class="icon-chevron-right right"]').last().click();
-
     cy.get('[data-title="Total"] span').each((getprice) => {
       const getproductprice = parseFloat(getprice.text().trim().slice(1));
       total += +getproductprice;
@@ -69,10 +68,3 @@ describe("First Assignment", () => {
     });
   });
 });
-
-/*
-1. Validate whether the search suggestion is not given to the user until 3 characters are populated.
-2. Validate results are displayed according to the search made by the user.
-3. Validate whether the user is able to apply the large size catalog filter for the T-shirt section.
-4. Validate whether the user is able to upload  a file on the contact us page.
-5. Add 5 products in the cart, validate total cart amount and individual product price both with and without discount.*/
