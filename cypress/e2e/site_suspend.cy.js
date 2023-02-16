@@ -49,12 +49,8 @@ describe("First Assignment", () => {
     let total = 0;
     cy.visit(Cypress.env("url1"));
     [1, 2, 3, 4, 5].forEach((num) => {
-      cy.get(`[data-id-product="${num}"]`)
-        .first()
-        .should("be.visible")
-        .click()
-        .get('[class="icon-chevron-left left"]')
-        .click();
+      cy.get(`[data-id-product="${num}"]`).first().should("be.visible")
+      cy.get('[class="icon-chevron-left left"]').click()
     });
     cy.get('[class="icon-chevron-right right"]').last().click();
     cy.get('[data-title="Total"] span').each((getprice) => {
